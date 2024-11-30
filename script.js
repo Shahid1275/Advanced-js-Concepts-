@@ -172,3 +172,35 @@ upDatedBook;
 
 const summary = `${title} is a book ${4+2} with ${pages} written by ${author}`
 summary;
+// we used for 1000 + pages ternaries operator in javascript 
+const pagesRange = pages > 1000 ? "Over a thousand pages" :"Less than a thousand pages";
+pagesRange;
+
+// arrow functions in js
+
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
+
+
+//short circuiting functions in js using && operator
+const isNew = hasMovieAdaptation && "No";
+isNew;
+
+console.log(true && "some code is working");
+console.log(false && "some code is working");
+
+
+// 0 is used in the javascript for like as falsy values
+// 1 is used in the javascript for like as truthy values
+
+// && operator
+// 1   1 = 1
+// 1   0 = 0
+// 0   1 = 0
+// 0   0 = 0  
+
+//or operator
+// 1   1 = 1
+// 1   0 = 1
+// 0   1 = 1
+// 0   0 = 0

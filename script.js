@@ -223,3 +223,68 @@ const essentialData  = books.map((book) => {
 });
 
 essentialData;
+
+
+const longBooks = books.filter((book) => book.pages > 600)
+.filter((book) => book.hasMovieAdaptation);
+longBooks;  
+
+// reduce method in javascript
+const pagesAllBooks = books.reduce((acc,book) => acc + book.pages,0);
+pagesAllBooks;
+
+// sorted methods in javascript
+const sortedBooks = books.sort((a,b) => a.pages - b.pages);
+sortedBooks;
+
+const arr = [3,7,1,9,6];
+const sorted = arr.slice().sort((a,b) => a - b);  // a-b means array sort in ascending order
+sorted;      
+arr;           // b-a means array sort in descending order
+
+
+//immutable methods in javascript 
+// array methods   1)   add a new element 2) update an element 3) delete an element
+// add a new book object
+const newBook = {
+  id:6,
+  title: "The lord of the Orders",
+  author: "J. R. R. R.Tolkien",
+}
+
+const updatedBooks = [...books, newBook];
+updatedBooks;
+
+//delete a book object
+const deletedBook = books.filter((book) => book.id !== 2);
+deletedBook;
+
+//update a book object
+const updatedBook = books.map((book) => {
+  if (book.id === 2) {
+    return {
+      ...book,
+      title: "The Lord of the Rings",
+    };
+  }
+  return book;
+});
+updatedBook;
+
+
+// promises in javascript is the below  and this is show you how to use them in js and data of api
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+
+  //above code is not mostly good because i use promises but i make a code more understandable 
+  // and clean code using async await functions in javascript.
+
+  async function fetchTodo() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await res.json();
+    console.log(data);
+  }
+  
+  fetchTodo();  //calling a function

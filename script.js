@@ -204,3 +204,22 @@ console.log(false && "some code is working");
 // 1   0 = 1
 // 0   1 = 1
 // 0   0 = 0
+
+
+
+// array map method in javascript 
+
+
+const x = [1,2,3,4,5,6,7,].map((ele) => ele * 2);
+console.log(x);
+
+const essentialData  = books.map((book) => {
+    return {
+        title: book.title,
+        author: book.author,
+        pages: book.pages,
+        publicationDate: getYear(book.publicationDate)
+    }
+});
+
+essentialData;
